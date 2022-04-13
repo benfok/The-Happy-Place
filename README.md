@@ -1,143 +1,110 @@
-#                   Welcome to The Happy Place :)
+# The Happy Place
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+## Description
+**The Happy Place :)** is an app that allows users to journal daily gratitudes or on subjects that contribute to their wellbeing, and mental health. Users can use this as a private diary, or share their posts publicly. 
 
-![The Happy Place Readme Opening Imagery](https://www.livehappy.com/wp-content/uploads/2018/02/happy.jpg)
+**As social media has become an increasingly toxic environment driven by a need for instant gratification** our app will not be based on interaction through comments or likes, and instead will focus on the value of journaling positive experiences.
 
-
-
-**The Happy Place :)** is an app that allows users to *journal daily on subjects that contribute to their wellbeing, and mental health.* Users can use this as a private diary, or share their posts publicly. 
-
-**As social media has become an increasingly toxic environment driven by a need for instant gratification** our app will not be based on interaction or likes, and instead will focus on the *value of journaling positive experiences.*
-
-
-Here we share our gratitude for the good times and the bad, the ups and the downs and all that fall in between.
-You are welcome to join us to share in our thoughts, our struggles, our accomplishments, our goals, ourselves.
-Feel free to make an account through the Login page found in the top right menu to partake in this journey we call life, together.
-
-
-
-##                  Who is **The Happy Place :)** Made for Anyways?
-
-
-![Typical social media](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxOHV1tFEHL2CXOil4YM9ept8mnCQjUjScGA&usqp=CAU)
-
-**AS A USER**
-
-- When I login I am presented with a home screen showing the most recent public posts
-
+**USER Story**
+- When I visit the site I can see public past and present posts shared by all users
 - As a USER I can login using a username and password, or sign up to create an account
-
--Once logged in I can view all my public and private posts
-
-- I can create new posts or edit older ones. Posts are set to either public or private
-
+- Once logged in I can create new posts or edit and delete older ones. Posts are set to either public or private
 - I am able to view the public posts of other users by user
-
-- I can toggle to a calendar view and view a count of public posts by day
-
-- I can switch this view to only view a count of my own posts
-
-- When I click on a date I can view posts associated with that date
+- I can switch the post view to see either all public posts or my own public and private posts so that the site functions more like a personal journal
 
 
+<details>
+<summary><strong>Table of Contents</strong></summary>
 
-###                  Technologies and Development:
+- [Credits, Languages and Skills](#credits-languages-and-skills)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing Guidelines](#contributing-guidelines)
+- [Tests](#tests)
+- [Screenshots](#screenshots)
+- [Questions and Links](#questions-and-links)
+- [Details and Learnings](#details-and-learnings)
+</details>
 
-**Built With:**
+## Credits, Languages and Skills
 
-[MVC architecture](https://developer.mozilla.org/en-US/docs/Glossary/MVC)
+This app was built using MVC architecture and contributions from the following:
+- [benfok](https://github.com/benfok/): Back-end Javascript, authentication, webserver config and custom RESTful API routes. Front-end Handlebars rendering and responsive CSS.
+- [mlfitz2](https://github.com/mlfitz2): Back-end Javascript, MySQL schema and seed data, Sequlize models. Front-end CSS styling.
+- [JonHB82](https://github.com/JonHB82): Front-end CSS framework.
+- [Dan-Klo](https://github.com/Dan-Klo): Utility, project planning and documentation.
 
-            We have utilized the Model-View-Controller paradigm. The MVC is a pattern in software design commonly used to implement user interfaces, data, and controlling logic. It emphasizes a separation between the software's business logic and display. This "separation of concerns" provides for a better division of labor and improved maintenance.`
+### Languages and Modules Used
+- JavaScript
+- MySQL
+- Handlebars.js
+- Sequelize.js
+- Node.js
+- Dependencies:
+  - [express](https://www.npmjs.com/package/express) as a web framework for Node.js.
+  - [express-session](https://www.npmjs.com/package/express-session) middleware to create a session variable for persistent logged in status handling
+  - [express-handlebars](https://www.npmjs.com/package/express-handlebars) a handlebars view engine for express
+  - [bcrypt](https://www.npmjs.com/package/bcrypt) module for password encryption for sign-up and login functionality
+  - [mysql2](https://www.npmjs.com/package/mysql2) for executing SQL code
+  - [sequelize](https://www.npmjs.com/package/sequelize) to create SQL models and relationships using JS sytnax
+  - [dotenv](https://www.npmjs.com/package/dotenv) used to host credentials in an environment file 
+  - [connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize) SQL session store using Sequelize.js
+  - [date-fns](https://www.npmjs.com/package/date-fns) Date/Time simplification
 
-[Node.js](https://nodejs.org/en/docs/)
+## Installation
+### Local Installation
+- Clone the repo.
+- Navigate to the folder and run `npm init` followed by `npm install` in order to install the dependencies.
+- Be sure to add your MySQL username and password to the .env.EXAMPLE file and rename to .env.
+- Using your preferred CLI to execute MySQL, run the schema.sql to create the database.
+- Then run `node seeds/index.js` from the command line in order to populate the database.
+- The application can be run by executing `node server.js` into your terminal and navigating to http://localhost:3001/.
 
-        
-            Through Node.js, Express.js, and Sequelize we are utilizing CRUD methodologies in the back-end development to CREATE, READ, UPDATE, AND DELETE data. 
+## Usage
+To use the application sign-up by creating your own user or use any of the usernames and passwords stored in the seeds/userData.json file to login as one of the ficticious users. 
 
+## License
+Distributed under the **MIT** license.
 
-[Express.js](https://expressjs.com/)
+## Contributing Guidelines
+Contributions help our open source community to continue to evolve, and any contributions are greatly appreciated. If you have a suggestion that would improve this code please follow the directions below. I require that any and all changes adhere to the Code of Conduct outlined in the [Contributor Covenant](https://www.contributor-covenant.org/).
 
-            Example CRUD code block:
+ - Fork the repo
+ - Create your feature branch
+ - Commit your changes
+ - Push the branch and open a pull request
 
+> _**Note:** Any contributions are understood to be under the same MIT that covers the project._
 
-                                ```
-                                router.delete('/:id', async (req, res) => {
-                        // delete a post by its `id` value
-                        try {
-                        const postData = await Post.destroy(
-                            {
-                            where: {
-                                id: req.params.id
-                            }
-                            }
-                        );
-                            if(!postData) {
-                            res.status(404).json({message: 'No post with this id exists.'});
-                            return;
-                            }
-                            res.status(200).json({ message: `Post deleted` });
-                            } catch (error) {
-                            console.log(error);
-                            res.status(500).json({ message: `${error}` });
-                            };
-                    });
-                                ```
+## Tests
+There are currently no tests written for this application.
 
-[Sequelize](https://sequelize.org/)
+## Screenshots
+Here is a screenshot of the home feed page
 
-        
-           
+![Screenshot of the main feed](./public/images/happy-place1.png)
 
-[Handlebars.js](https://handlebarsjs.com/)
+## Questions and Links
+Please reach out with any questions regarding the application.
 
-           
-        
+The forked repository in [GitHub](https://github.com/benfok/the-happy-place-forked)
 
+The deployed application on [Heroku](https://the-happy-place-app.herokuapp.com/)
 
+## Details and Learnings
+- The application is responsive to different screen widths allowing for an unlimited number of posts for a given day to render smoothly
+- The instructions and new post modals allow for uncluttered page viewing and an effective UX
+- The user can set a private flag on the feed view to toggle between a journal view or public view. This flag is carried across all date pages of the feed via the URL and links generated by the handlebars code
+- Validation exists on all entry fields including email, password and when creating a post
+- Posts that are edited or private contain flags denoting them as such
+- This application uses the hierarchical structure of MVC - Model, View Controller - in order to separate concerns and functionality
+- This structure and the use of handlebars.js for templating and rendering dynamic HTML meant a clean and structured code base with great scalability
 
-
-
-####                    Development Staff:
-
-
-
-
-This project is developed by *groupFive*
-
-**Front-end Development:**
-    - Patric Seaman
-    - Jon Burch
-
-**Back-end Development:**
-    - Ben Fok
-    - Michael Fitzpatrick
-
-**Utility:**
-    - Daniel Klotz
-
-
-
-
-
-#####                   Wanna Try?
-
-
-![The Happy Place](https://images.squarespace-cdn.com/content/v1/5dc364e749035d18e6487b1a/1574125097244-WOT8UEGEORK43SWBQFQE/59244174_368886433968369_8260657057507697092_n.jpg?format=1000w)
-
-
-
-Visit the GitHub repository at: 
-
-[Link Text](https://github.com/mlfitz2/The-Happy-Place)
-
-
-Try the deployed application for yourself at:
-
-[Link Text](https://path/to/link)
-
-
-Thanks for reading. Enjoy The Happy Place!
-
-
+- Some considerations for future development include:
+  - Rendering a 404 page for invalid URLs
+  - The ability to share private posts with particular users to render on their feeds
+  - The functionality to set goals and track personal post counts to help form healthy journaling habits
 
 
