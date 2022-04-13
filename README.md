@@ -9,6 +9,7 @@
 **USER Story**
 - When I visit the site I can see public past and present posts shared by all users
 - As a USER I can login using a username and password, or sign up to create an account
+- My profile includes an email address and a bio that I can edit and other users can see when logged in
 - Once logged in I can create new posts or edit and delete older ones. Posts are set to either public or private
 - I am able to view the public posts of other users by user
 - I can switch the post view to see either all public posts or my own public and private posts so that the site functions more like a personal journal
@@ -82,9 +83,12 @@ Contributions help our open source community to continue to evolve, and any cont
 There are currently no tests written for this application.
 
 ## Screenshots
-Here is a screenshot of the home feed page
+Here are some screenshots of the deployed application
 
 ![Screenshot of the main feed](./public/images/happy-place1.png)
+![Screenshot of the new post modal](./public/images/happy-place-post.png)
+![Screenshot of the profile page](./public/images/happy-place-profile.png)
+
 
 ## Questions and Links
 Please reach out with any questions regarding the application.
